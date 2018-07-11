@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>qrcode generator utf16</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/jquery-qrcode/master/jquery.qrcode.min.js"></script>
+<style>
+
+#qrcode canvas {
+   display: block;
+    margin: 0 auto;
+    padding: 5px;
+    background: #fff;
+}
+#contentorurl{
+     width:98%;
+}
+#generate{
+margin-top:5px;
+float: right;
+}
+</style>
+<script>
+$(function() {
+ //run once for my blogger
+$('#qrcode').qrcode({width: 150
+                     ,height: 150
+                     ,text: 'http://budget-programmer.blogspot.tw/'});
+                     
+$("#generate").click(function() {
+
+var text = $('#contentorurl').val();
+
+$('#qrcode').empty();
+
+$('#qrcode').qrcode({width: 160
+                     ,height: 160
+                     ,text: utf16to8(text)});
+});
+
+function utf16to8(str) {  
+    var out, i, len, c;  
+    out = "";  
+    len = str.length;  
+    for(i = 0; i < len; i++) {  
+    c = str.charCodeAt(i);  
+    if ((c >= 0x0001) && (c <= 0x007F)) {  
+        out += str.charAt(i);  
+    } else if (c > 0x07FF) {  
+        out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));  
+        out += String.fromCharCode(0x80 | ((c >>  6) & 0x3F));  
+        out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));  
+    } else {  
+        out += String.fromCharCode(0xC0 | ((c >>  6) & 0x1F));  
+        out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));  
+    }  
+    }  
+    return out;  
+}  
+});
+</script>
+</head>
+<body>
+
+<p>Render in table</p>
+<div id="qrcode"></div>
+ 
+ <input type="search" id="contentorurl" placeholder="Enter content" />
+
+<button type="button" id="generate">Generate</button>
+
+
+</body>
+</html>
