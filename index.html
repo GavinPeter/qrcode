@@ -14,12 +14,14 @@ $('#qrcode').qrcode({width: 300
                      
 $("#generate").click(function() {
 
+ var size = $('input[name=size]:checked').val();
+ 
 var text = $('#contentorurl').val();
 
 $('#qrcode').empty();
 
-$('#qrcode').qrcode({width: 300
-                     ,height: 300
+$('#qrcode').qrcode({width: size
+                     ,height: size
                      ,text: utf16to8(text)});
 });
 
@@ -73,7 +75,11 @@ function utf16to8(str) {
 
 <h2>Qrcode Generator support utf16</h2>
 <div id="qrcode"></div>
- 
+ <div>
+  <input type="radio" name="size" value="200"/>   
+  <input type="radio" name="size" value="300"/>  
+  <input type="radio" name="size" value="400"/> 
+ </div> 
 <input type="search" id="contentorurl" placeholder="Text..." />
 
 <button type="button" id="generate">Generate</button>
