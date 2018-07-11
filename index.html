@@ -8,8 +8,8 @@
 <script>
 $(function() {
  //run once for my blogger
-$('#qrcode').qrcode({width: 200
-                     ,height: 200
+$('#qrcode').qrcode({width: 300
+                     ,height: 300
                      ,text: 'https://budget-programmer.blogspot.tw/'});
                      
 $("#generate").click(function() {
@@ -18,8 +18,8 @@ var text = $('#contentorurl').val();
 
 $('#qrcode').empty();
 
-$('#qrcode').qrcode({width: 200
-                     ,height: 200
+$('#qrcode').qrcode({width: 300
+                     ,height: 300
                      ,text: utf16to8(text)});
 });
 
