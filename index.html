@@ -4,33 +4,6 @@
 <title>qrcode generator utf16</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/jquery-qrcode/master/jquery.qrcode.min.js"></script>
-<style>
-
- * {
-  box-sizing: border-box;
-  max-width:1200px;
-  text-align:center;
-  margin-left:auto;
-  margin-right:auto;
-     display: block;
-       font-size:16pt;
-}
-   
-#qrcode canvas { 
-    margin: 0 auto;
-    padding: 5px;
-    background: #fff;
-}
-  
-#contentorurl{
-     width: 90%;
-}
-  
-#generate{
-   margin-top: 5px;
-   float: right;
-}
-</style>
 <script>
 $(function() {
  //run once for my blogger
@@ -70,6 +43,31 @@ function utf16to8(str) {
 }  
 });
 </script>
+ <style>
+ * {
+  box-sizing: border-box;
+  max-width: 1200px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size:16pt;
+}
+   
+#qrcode canvas { 
+    margin: 0 auto;
+    padding: 5px;
+    background: #fff;
+}
+  
+#contentorurl{
+     width: 90%;
+}
+  
+#generate{
+   margin-top: 5px;
+   float: right;
+}
+</style>
 </head>
 <body>
 
