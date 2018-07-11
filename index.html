@@ -76,9 +76,12 @@ function utf16to8(str) {
 <h2>Qrcode Generator support utf16</h2>
 <div id="qrcode"></div>
  <div>
-  <input type="radio" name="size" value="200" />   
-  <input type="radio" name="size" value="300"  checked />  
-  <input type="radio" name="size" value="400"/> 
+  <input type="radio" id="s200" name="size" value="200" />
+  <label for="s200">200x200</label>
+  <input type="radio" id="s300" name="size" value="300"  checked />  
+   <label for="s300">300x200</label>
+  <input type="radio" id="s400" name="size" value="400"/> 
+  <label for="s400">400x400</label>
  </div> 
 <input type="search" id="contentorurl" placeholder="Text..." />
 
