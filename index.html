@@ -12,7 +12,8 @@ $('#qrcode').qrcode({width: 200
                      ,height: 200
                      ,text: 'https://budget-programmer.blogspot.tw/'});
                      
-$("#generate").click(function() {
+//generate qrcode as change  
+$('#contentorurl').on('input',function(e){
 
  var size = $('input[name=size]:checked').val();
  
@@ -85,7 +86,7 @@ function utf16to8(str) {
  </div> 
 <input type="search" id="contentorurl" placeholder="Text..." />
 
-<button type="button" id="generate">Generate</button>
+<!--button type="button" id="generate">Generate</button-->
 
 </body>
 </html>
