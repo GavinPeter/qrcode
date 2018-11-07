@@ -14,17 +14,19 @@ $('#qrcode').qrcode({width: 200
  
  $('input[type=radio][name=size]').change(function() {
    
-  var size = $('input[name=size]:checked').val(); 
+  genQrcode();
   
-  var text = $('#contentorurl').val();
-  
-  $('#qrcode').qrcode({width: size
-                     ,height: size
-                     ,text: utf16to8(text)});
  });
 
  //generate qrcode as change  
 $('#contentorurl').on('input',function(e){
+
+ genQrcode();
+ 
+});
+
+ 
+function genQrcode(){
 
 var size = $('input[name=size]:checked').val();
  
@@ -35,8 +37,9 @@ $('#qrcode').empty();
 $('#qrcode').qrcode({width: size
                      ,height: size
                      ,text: utf16to8(text)});
-});
-
+}
+ 
+ 
 function utf16to8(str) {  
     var out, i, len, c;  
     out = "";  
