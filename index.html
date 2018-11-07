@@ -11,11 +11,22 @@ $(function() {
 $('#qrcode').qrcode({width: 200
                      ,height: 200
                      ,text: 'https://budget-programmer.blogspot.tw/'});
-                     
-//generate qrcode as change  
+ 
+ $('input[type=radio][name=size]').change(function() {
+   
+  var size = $('input[name=size]:checked').val(); 
+  
+  var text = $('#contentorurl').val();
+  
+  $('#qrcode').qrcode({width: size
+                     ,height: size
+                     ,text: utf16to8(text)});
+ });
+
+ //generate qrcode as change  
 $('#contentorurl').on('input',function(e){
 
- var size = $('input[name=size]:checked').val();
+var size = $('input[name=size]:checked').val();
  
 var text = $('#contentorurl').val();
 
