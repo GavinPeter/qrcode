@@ -39,9 +39,6 @@ $('#qrcode').qrcode({width: size
                      ,text: utf16to8(text)});
 }
 
-function eraseText() {
-   $("contentorurl").value = "";
-} 
  
 function utf16to8(str) {  
     var out, i, len, c;  
@@ -117,7 +114,7 @@ textarea {
  </div> 
 <!--input type="search" id="contentorurl" placeholder="Text..." /-->
  <textarea id="contentorurl" rows="8" placeholder="Text..."></textarea>
-  <input id="clear" type="button" value="Clear" onclick=" $('contentorurl').value = '';">  
+  <input id="clear" type="button" value="Clear" onclick=" $('#contentorurl').value = '';">  
 
 </body>
 </html>
