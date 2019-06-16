@@ -38,7 +38,10 @@ $('#qrcode').qrcode({width: size
                      ,height: size
                      ,text: utf16to8(text)});
 }
- 
+
+function eraseText() {
+   $("contentorurl").value = "";
+} 
  
 function utf16to8(str) {  
     var out, i, len, c;  
@@ -61,9 +64,7 @@ function utf16to8(str) {
 }  
 });
  
-function eraseText() {
-   $("contentorurl").value = "";
-} 
+
  
 </script>
  <style>
