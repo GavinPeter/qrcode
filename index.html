@@ -61,8 +61,9 @@ function utf16to8(str) {
 }  
 });
  
-function cleartext(element) {
-  element.value = '';
+function cleartext() {
+   $("#contentorurl").val("");
+
 }
  
 </script>
@@ -116,7 +117,7 @@ textarea {
  </div> 
 <!--input type="search" id="contentorurl" placeholder="Text..." /-->
  <textarea id="contentorurl" rows="8" placeholder="Text..."></textarea>
-  <input id="clear" type="button" value="Clear" onclick="cleartext(this)">  
+  <input id="clear" type="button" value="Clear" onclick="cleartext()">  
 
 </body>
 </html>
